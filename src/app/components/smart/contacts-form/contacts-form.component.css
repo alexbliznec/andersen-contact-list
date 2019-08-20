@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+.form-label {
+    text-align: start;
+}

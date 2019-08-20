@@ -1,0 +1,30 @@
+<div>
+    <form [formGroup]="contactsForm" (ngSubmit)="addContact()" class="container">
+        <div class="form-input">
+            <label for="lastName" class="form-label">lastname:</label>
+            <input type="text" formControlName="lastName">
+            <app-validation-error 
+                *ngIf="contactsForm.get('lastName').touched && contactsForm.get('lastName').invalid" 
+                [errorText]="'укажите фамилию'">
+            </app-validation-error>
+        </div>
+        <div class="form-input">
+            <label for="firstName" class="form-label">Firstname:</label>
+            <input type="text" formControlName="firstName">
+        </div>
+        <div class="form-input">
+            <label for="patronym" class="form-label">Patronym:</label>
+            <input type="text" formControlName="patronym">
+        </div>
+        <div class="form-input">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="text" formControlName="phone" placeholder="+0 999 99 99">
+            <app-validation-error 
+            *ngIf="contactsForm.get('lastName').touched && contactsForm.get('lastName').invalid" 
+            [errorText]="'укажите укажите телефон в правильном формате'">
+        </app-validation-error>
+        </div>
+        <button type="submit" [disabled]="contactsForm.invalid">Add</button>
+    </form>
+</div>
+<hr>

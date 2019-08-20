@@ -1,0 +1,15 @@
+<div>
+    <div class="contact-list-labels">
+        <span>Фамилия</span>
+        <span>Имя</span>
+        <span>Отчество</span>
+        <span>Телефон</span>
+    </div>
+    <hr>
+    <div>
+        <app-contact-item *ngFor="let contact of contacts" 
+        [contact]="contact"
+        ></app-contact-item>
+    </div>
+</div>
+

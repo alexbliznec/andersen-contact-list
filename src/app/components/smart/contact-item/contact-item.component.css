@@ -1,0 +1,30 @@
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 1em;
+}
+
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 10;
+    justify-content: space-around;   
+}
+
+/* .checkbox-img {
+    background: url(), no-repeat;
+    background-image: url(http://cdn.onlinewebfonts.com/svg/img_397133.png);
+    background-size: 20px;
+    background-color: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+input[type=checkbox] {
+    display: none;
+} */
+
+
+
