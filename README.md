@@ -1,3 +1,11 @@
+#
+Проект запускается через npm run dev
+Должен быть установлен json-server
+Сервер запускается на 3000 порту
+Фейковая БД лежит в файле contacts.json в корне проекта
+#
+Много чего не доработано, в основном визуальная часть и верстка
+По логике функциональность работает
 # ContactsList
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
