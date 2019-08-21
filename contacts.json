@@ -22,7 +22,7 @@
       "patronym": "Макоронович",
       "phone": "+7 777 77 77",
       "id": 36076,
-      "important": false
+      "important": true
     },
     {
       "firstName": "Си",
@@ -30,7 +30,7 @@
       "patronym": "Пинь",
       "phone": "8 800 8888",
       "id": 18990,
-      "important": true
+      "important": false
     }
   ]
 }
