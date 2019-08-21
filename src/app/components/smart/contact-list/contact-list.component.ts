@@ -26,8 +26,6 @@ export class ContactListComponent implements OnInit {
     this.store.select('contactsPage').subscribe(({contacts}) => {
       this.contacts = contacts;
     })
-    
-
   }
 
 }

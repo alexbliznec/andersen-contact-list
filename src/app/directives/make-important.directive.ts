@@ -1,12 +1,11 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appMakeImportant]'
+  selector: '[appMakeImportant]',
 })
 export class MakeImportantDirective {
 
   constructor(private element: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.element.nativeElement, "cursor", "pointer");
-    this.element.nativeElement.style.flexOrder = 1;
+    this.renderer.setStyle(this.element.nativeElement, "font-size", '10px');
   }
 }

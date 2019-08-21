@@ -1,8 +1,12 @@
+
+.form-container {
+    display: flex;
+}
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
+    flex: 9;
 }
 .form-input {
     display: flex;
@@ -10,4 +14,27 @@
 }
 .form-label {
     text-align: start;
+}
+input {
+    border-style: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 25px;
+    margin: 2%;
+    padding: 3px;
+}
+button[type=submit] {
+    border-style: none;
+    background-image: url(../../../../assets/img/add.png);
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button[type=submit]:disabled {
+    background-image: url(../../../../assets/img/disabled_add.png);
+    
 }

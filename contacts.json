@@ -1,20 +1,12 @@
 {
   "contacts": [
     {
-      "firstName": "Дональд",
-      "lastName": "Трамп",
-      "patronym": "Альфредович",
-      "phone": "+79781108704",
-      "id": 29411,
-      "important": false
-    },
-    {
       "firstName": "Владимир",
       "lastName": "Путин",
       "patronym": "Владимирович",
       "phone": "+7 999 99 99",
       "id": 36009,
-      "important": false
+      "important": true
     },
     {
       "firstName": "Ангела",
@@ -31,6 +23,14 @@
       "phone": "+7 777 77 77",
       "id": 36076,
       "important": false
+    },
+    {
+      "firstName": "Си",
+      "lastName": "Дзынь",
+      "patronym": "Пинь",
+      "phone": "8 800 8888",
+      "id": 18990,
+      "important": true
     }
   ]
 }

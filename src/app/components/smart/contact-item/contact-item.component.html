@@ -1,12 +1,16 @@
-<div class="contact-item">
-    <input type="checkbox" id="ckeckbox-id" [checked]="contact.important" (change)="makeImportant()">
+
+    <div class="buttons">
+        <input type="checkbox" [id]="contact.id" [checked]="contact.important" (change)="makeImportant()">
+        <label [for]="contact.id"></label>
+    </div>
         <div class="contact-container">
             <span class="contact-item-field" >{{contact.lastName}}</span>
             <span class="contact-item-field" >{{contact.firstName}}</span>
             <span class="contact-item-field" >{{contact.patronym}}</span>
             <span class="contact-item-field" >{{contact.phone}}</span>
-            <span *ngIf="contact.important">ЭТОТ КОНТАКТ ОЧЕНЬ ВАЖЕН</span>
         </div>
-    <button (click)="deleteContact()">Delete</button>
-</div>
-    <hr>
+        <button (click)="deleteContact()">Удалить</button>
+
+    
+
+    

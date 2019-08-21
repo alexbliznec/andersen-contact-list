@@ -1,14 +1,18 @@
 <div>
     <div class="contact-list-labels">
-        <span>Фамилия</span>
-        <span>Имя</span>
-        <span>Отчество</span>
-        <span>Телефон</span>
+        <span class="list-label">Фамилия:</span>
+        <span class="list-label">Имя:</span>
+        <span class="list-label">Отчество:</span>
+        <span class="list-label">Телефон:</span>
     </div>
     <hr>
-    <div>
-        <app-contact-item *ngFor="let contact of contacts" 
-        [contact]="contact"
+    <div class="contacts-box">
+        <app-contact-item 
+            *ngFor="let contact of contacts" 
+            [contact]="contact"
+            class="contact-item"
+            [attr.important]="contact.important"
+            [id]="'div' + contact.id"
         ></app-contact-item>
     </div>
 </div>

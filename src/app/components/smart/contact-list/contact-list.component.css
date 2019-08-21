@@ -1,6 +1,18 @@
+
 .contact-list-labels {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 2% auto;
+    font-weight: bold;
+}
+.list-label {
+    flex-basis: 25%;
+    text-align: start;
+}
+.contacts-box {
+    display: flex;
+    flex-direction: column;
 }

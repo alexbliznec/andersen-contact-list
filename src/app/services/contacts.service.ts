@@ -38,7 +38,7 @@ export class ContactsService {
 
   }
   makeImportant(contactData: ContactInterface) {
-    console.log(contactData);
+    // console.log(contactData);
     this.http.put(`${this.baseUrl}/contacts/${contactData.id}`, contactData)
       .toPromise()
       .then((data: ContactInterface) => this.store.dispatch(new ImportantContact(data)))
