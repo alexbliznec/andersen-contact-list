@@ -3,8 +3,7 @@ import { Store } from '@ngrx/store';
 
 import { ContactsService } from 'src/app/services/contacts.service';
 import { AppState } from 'src/app/interfaces/app.state';
-import { ContactInterface, Contacts } from 'src/app/interfaces/contact.interface';
-import { ShowContacts } from 'src/app/redux/contacts.action';
+import { ContactInterface } from 'src/app/interfaces/contact.interface';
 
 
 
@@ -19,9 +18,6 @@ export class ContactListComponent implements OnInit {
   constructor(private contactsService: ContactsService, private store: Store<AppState>) { }
 
   ngOnInit() {
-    // this.store.select('contactsPage').subscribe(({contacts}) => {
-    //   this.contacts = contacts;
-    // })
     this.contactsService.showContacts()
     this.store.select('contactsPage').subscribe(({contacts}) => {
       this.contacts = contacts;

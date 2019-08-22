@@ -11,8 +11,6 @@ import { ContactsFormComponent } from './components/smart/contacts-form/contacts
 import { ContactItemComponent } from './components/smart/contact-item/contact-item.component';
 import { ContactListComponent } from './components/smart/contact-list/contact-list.component';
 import { contactsReducer } from './redux/contacts.reducer';
-import { MakeImportantDirective } from './directives/make-important.directive';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +19,6 @@ import { MakeImportantDirective } from './directives/make-important.directive';
     ContactsFormComponent,
     ContactItemComponent,
     ContactListComponent,
-    MakeImportantDirective
   ],
   imports: [
     BrowserModule,

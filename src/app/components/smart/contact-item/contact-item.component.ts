@@ -1,7 +1,6 @@
 import { Component, Input, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/interfaces/app.state';
-import { DeleteContact, ImportantContact } from 'src/app/redux/contacts.action';
 import { ContactInterface } from 'src/app/interfaces/contact.interface';
 import { ContactsService } from 'src/app/services/contacts.service';
 
@@ -22,8 +21,6 @@ export class ContactItemComponent {
   makeImportant() {
     this.contact.important = !this.contact.important;
     this.contactsService.makeImportant(this.contact);
-    // console.log(this.element.nativeElement);
-    // this.renderer.setStyle(this.element.nativeElement, 'color', 'green');
   }
 
 }

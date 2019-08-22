@@ -6,7 +6,7 @@
       "patronym": "Владимирович",
       "phone": "+7 999 99 99",
       "id": 36009,
-      "important": true
+      "important": false
     },
     {
       "firstName": "Ангела",
@@ -30,7 +30,7 @@
       "patronym": "Пинь",
       "phone": "8 800 8888",
       "id": 18990,
-      "important": true
+      "important": false
     }
   ]
 }

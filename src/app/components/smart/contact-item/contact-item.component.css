@@ -31,13 +31,10 @@ label::before {
     background-size: 100%;
     width: 20px;
     height: 20px;
-    /* background-color: rgb(80, 79, 80); */
     cursor: pointer;
-    /* border-radius: 50%; */
     transition: 0.4s;
 }
 input[type=checkbox]:checked + label::before {
-    /* background-color: rgb(253, 22, 22); */
     content: '';
     background-image: url(../../../../assets/img/star1.png);
 }
@@ -49,19 +46,6 @@ input[type=checkbox]:checked + label::before {
     background-image: url(../../../../assets/img/delete.png);
 }
 
-
-/* .checkbox-img {
-    background: url(), no-repeat;
-    background-image: url(http://cdn.onlinewebfonts.com/svg/img_397133.png);
-    background-size: 20px;
-    background-color: none;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-input[type=checkbox] {
-    display: none;
-} */
 
 
 
