@@ -8,7 +8,7 @@
     <hr>
     <div class="contacts-box">
         <app-contact-item 
-            *ngFor="let contact of contacts" 
+            *ngFor="let contact of (contactList$ | async).contacts" 
             [contact]="contact"
             class="contact-item"
             [attr.important]="contact.important"

@@ -1,6 +1,5 @@
-import { Component, Input, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/interfaces/app.state';
+import { Component, Input } from '@angular/core';
+
 import { ContactInterface } from 'src/app/interfaces/contact.interface';
 import { ContactsService } from 'src/app/services/contacts.service';
 
@@ -12,7 +11,7 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ContactItemComponent {
   @Input()contact: ContactInterface;
 
-  constructor(private contactsService: ContactsService, private store: Store<AppState>, private element: ElementRef, private renderer: Renderer2) { }
+  constructor(private contactsService: ContactsService) { }
 
   deleteContact() {
     this.contactsService.deleteContact(this.contact);

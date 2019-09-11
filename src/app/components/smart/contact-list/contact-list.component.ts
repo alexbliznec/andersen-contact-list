@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { AppState } from 'src/app/interfaces/app.state';
 import { ContactInterface } from 'src/app/interfaces/contact.interface';
+import { Observable } from 'rxjs';
 
 
 
@@ -15,13 +16,16 @@ import { ContactInterface } from 'src/app/interfaces/contact.interface';
 export class ContactListComponent implements OnInit {
 
   public contacts: ContactInterface[];
+  public contactList$: Observable<{contacts: ContactInterface[]}>;
   constructor(private contactsService: ContactsService, private store: Store<AppState>) { }
 
   ngOnInit() {
     this.contactsService.showContacts()
-    this.store.select('contactsPage').subscribe(({contacts}) => {
-      this.contacts = contacts;
-    })
+    this.contactList$ = this.store.select('contactsPage');
+    // console.log(this.contactList$);
+      // .subscribe(({contacts}) => {
+      //   this.contacts = contacts;
+      // })
   }
 
 }

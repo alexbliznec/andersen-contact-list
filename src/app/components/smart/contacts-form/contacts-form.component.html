@@ -21,12 +21,12 @@
                     <label for="phone" class="form-label">Телефон:</label>
                     <input type="text" formControlName="phone" placeholder="+0 999 99 99">
                     <app-validation-error 
-                    *ngIf="contactsForm.get('lastName').touched && contactsForm.get('lastName').invalid" 
+                    *ngIf="contactsForm.get('lastName').touched && contactsForm.get('phone').invalid" 
                     [errorText]="'укажите укажите телефон в правильном формате'">
                 </app-validation-error>
                 </div>
-                <button type="submit" [disabled]="contactsForm.invalid" (click)="addContact()"></button>
-                <app-validation-error *ngIf=contactsForm.invalid [errorText]="'Все поля дожны быть заполнены'"></app-validation-error>
+                <button type="submit"  (click)="addContact()"></button>
+                
         </div>
 
         

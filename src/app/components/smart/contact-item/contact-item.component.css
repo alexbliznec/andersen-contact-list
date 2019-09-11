@@ -4,6 +4,7 @@
     margin: 10px;
     border-bottom: 1px solid grey;
     padding: 5px;
+    transition: 1s;
 }
 .contact-container {
     flex-basis: 70%;
