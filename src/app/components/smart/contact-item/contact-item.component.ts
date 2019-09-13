@@ -15,8 +15,8 @@ export class ContactItemComponent {
 
   deleteContact() {
     this.contactsService.deleteContact(this.contact);
-
   }
+
   makeImportant() {
     this.contact.important = !this.contact.important;
     this.contactsService.makeImportant(this.contact);

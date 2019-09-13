@@ -49,10 +49,12 @@ export class ContactsService {
         this.showContacts();
       });
   }
-  generateId() {
+  generateId(): number {
     return Math.floor(Math.random() * 99999); // конечно это учебное решение ибо не гарантирует уникальности числа
   }
-
+  sum(a: number, b: number): number {
+    return a + b;
+  }
 }
 
 // старый вариант на промисах:
