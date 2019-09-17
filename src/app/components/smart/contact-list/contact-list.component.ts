@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, State } from '@ngrx/store';
 
 import { ContactsService } from 'src/app/services/contacts.service';
 import { AppState } from 'src/app/interfaces/app.state';
 import { ContactInterface } from 'src/app/interfaces/contact.interface';
 import { Observable } from 'rxjs';
+import { ShowContacts } from 'src/app/redux/contacts.action';
 
 
 
@@ -20,12 +21,8 @@ export class ContactListComponent implements OnInit {
   constructor(private contactsService: ContactsService, private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.contactsService.showContacts()
-    this.contactList$ = this.store.select('contactsPage');
-    // console.log(this.contactList$);
-      // .subscribe(({contacts}) => {
-      //   this.contacts = contacts;
-      // })
+    this.contactsService.showContacts();
+    this.contactList$ = this.store.select((state) => state.contactsPage);
   }
 
 }

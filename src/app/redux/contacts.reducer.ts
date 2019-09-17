@@ -7,13 +7,13 @@ const initialState = {
 
 export function contactsReducer(state = initialState, action: ContactsAction) {
     switch (action.type) {
-        case CONTACT_ACTION.ADD_CONTACT:
+        case CONTACT_ACTION.ADD_CONTACT_SUCCESS:
             alert(`contact ${action.payload.firstName} ${action.payload.lastName} added`);
             return {
                 ...state,
                 contacts: [...state.contacts, action.payload]
             }
-        case CONTACT_ACTION.DELETE_CONTACT:
+        case CONTACT_ACTION.DELETE_CONTACT_SUCCESS:
             return {
                 ...state,
                 contacts: [...state.contacts.filter((contact) => contact.id !== action.payload.id)]
@@ -25,7 +25,7 @@ export function contactsReducer(state = initialState, action: ContactsAction) {
                 ...state,
                 contacts: [...state.contacts]
             }
-        case CONTACT_ACTION.SHOW_CONTACTS:
+        case CONTACT_ACTION.LOAD_CONTACTS:
             return {
                 ...state,
                 contacts: [...action.payload]

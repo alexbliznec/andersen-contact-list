@@ -41,14 +41,11 @@ export class ContactsFormComponent implements OnInit {
         id: contactId,
         important: false
       }
-      // console.log(contact);
   
       this.contactsService.addContact(contact);
       this.contactsForm.reset();
     }
     this.contactsForm.markAllAsTouched();
     return;
-
   }
-
 }

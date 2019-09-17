@@ -4,7 +4,7 @@ import { ContactItemComponent } from './contact-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-fdescribe('ContactItemComponent', () => {
+describe('ContactItemComponent', () => {
   let component: ContactItemComponent;
   let fixture: ComponentFixture<ContactItemComponent>;
 
