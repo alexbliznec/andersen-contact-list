@@ -12,16 +12,16 @@ import { ContactInterface } from '../interfaces/contact.interface';
 })
 export class ContactsService {
 
-  private baseUrl: string = 'http://localhost:3000'
-  
+  private baseUrl: string = 'http://localhost:3000';
+
   constructor(private http: HttpClient, private store: Store<AppState>) { }
 
   showContacts() {
    this.http.get(`${this.baseUrl}/contacts`)
       .pipe(map((val: ContactInterface[]) => val))
       .subscribe((result) => {
-        this.store.dispatch(new ShowContacts(result))
-      })
+        this.store.dispatch(new ShowContacts(result));
+      });
   }
   addContact(contactData: ContactInterface) {
     this.http.post(`${this.baseUrl}/contacts`, contactData)

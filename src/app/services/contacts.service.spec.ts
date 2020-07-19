@@ -1,21 +1,86 @@
-import { TestBed } from '@angular/core/testing';
-
-
+import {fakeAsync, flush, getTestBed, TestBed} from '@angular/core/testing';
 import { ContactsService } from './contacts.service';
-import { HttpClientModule } from '@angular/common/http';
-describe('ContactsService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientModule],
-    providers: [ContactsService]
-  }));
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {provideMockStore} from '@ngrx/store/testing';
+import {ContactInterface} from '../interfaces/contact.interface';
+
+const mockContactData: ContactInterface = {
+  firstName: 'string',
+  lastName: 'string',
+  patronym: 'string',
+  phone: 'string',
+  id: 1,
+  important: true,
+};
+
+fdescribe('ContactsService', () => {
+  let injector: TestBed;
+  let service: ContactsService;
+  let httpMock: HttpTestingController;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ContactsService, provideMockStore()]
+    });
+    injector = getTestBed();
+    service = injector.get(ContactsService);
+    httpMock = injector.get(HttpTestingController);
+  });
 
   it('should be created', () => {
-    const service: ContactsService = TestBed.get(ContactsService);
     expect(service).toBeTruthy();
   });
 
-  it('should return sum of numbers', () => {
-    const service: ContactsService = TestBed.get(ContactsService);
-    expect(service.sum(3, 4)).toBe(7);
-  })
+  describe( 'sum', () => {
+    it('should return sum of numbers', () => {
+      expect(service.sum(3, 4)).toBe(7);
+    });
+  });
+
+  describe( 'generateId', () => {
+
+    it('should return any number', () => {
+      expect(typeof service.generateId() === 'number').toBeTruthy();
+    });
+  });
+
+  describe( 'showContacts', () => {
+
+    it('should make request on specific URL and use GET method', fakeAsync(() => {
+      service.showContacts();
+
+      const req = httpMock.expectOne(`http://localhost:3000/contacts`);
+
+      expect(req.request.method).toBe('GET');
+
+      flush();
+    }));
+  });
+
+  describe( 'addContact', () => {
+
+    it('should make request on specific URL and use POST method', fakeAsync(() => {
+      service.addContact(mockContactData);
+
+      const req = httpMock.expectOne(`http://localhost:3000/contacts`);
+
+      expect(req.request.method).toBe('POST');
+
+      flush();
+    }));
+  });
+
+  describe( 'makeImportant', () => {
+
+    it('should make request on specific URL and use PUT method', fakeAsync(() => {
+      service.makeImportant(mockContactData);
+
+      const req = httpMock.expectOne(`http://localhost:3000/contacts/1`);
+
+      expect(req.request.method).toBe('PUT');
+
+      flush();
+    }));
+  });
 });
