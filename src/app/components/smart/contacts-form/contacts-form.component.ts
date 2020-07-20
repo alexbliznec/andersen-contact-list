@@ -14,7 +14,7 @@ export class ContactsFormComponent implements OnInit {
   public isContactsFormValid: string;
   private contactsForm: FormGroup;
   private pattern: RegExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
-  constructor(private fb: FormBuilder, 
+  constructor(private fb: FormBuilder,
               private contactsService: ContactsService) { }
 
   ngOnInit() {
@@ -29,10 +29,10 @@ export class ContactsFormComponent implements OnInit {
       this.isContactsFormValid = res;
     });
   }
-  
+
   addContact() {
     if (this.isContactsFormValid !== 'INVALID' && this.isContactsFormValid !== undefined) {
-      const contactId = this.contactsService.generateId()
+      const contactId = this.contactsService.generateId();
       const contact:ContactInterface = {
         firstName: this.contactsForm.value.firstName,
         lastName: this.contactsForm.value.lastName,
@@ -42,7 +42,7 @@ export class ContactsFormComponent implements OnInit {
         important: false
       }
       // console.log(contact);
-  
+
       this.contactsService.addContact(contact);
       this.contactsForm.reset();
     }

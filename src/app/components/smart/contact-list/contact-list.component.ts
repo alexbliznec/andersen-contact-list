@@ -20,7 +20,7 @@ export class ContactListComponent implements OnInit {
   constructor(private contactsService: ContactsService, private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.contactsService.showContacts()
+    this.contactsService.showContacts();
     this.contactList$ = this.store.select('contactsPage');
     // console.log(this.contactList$);
       // .subscribe(({contacts}) => {

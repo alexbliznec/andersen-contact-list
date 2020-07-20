@@ -19,7 +19,7 @@ describe('AppComponent', () => {
         ContactListComponent,
       ],
       imports: [HttpClientModule, FormsModule, ReactiveFormsModule],
-      providers: [provideMockStore]
+      providers: [provideMockStore()]
     }).compileComponents();
   }));
 

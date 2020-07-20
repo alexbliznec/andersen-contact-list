@@ -13,7 +13,7 @@ const mockContactData: ContactInterface = {
   important: true,
 };
 
-fdescribe('ContactsService', () => {
+ describe('ContactsService', () => {
   let injector: TestBed;
   let service: ContactsService;
   let httpMock: HttpTestingController;
@@ -66,6 +66,30 @@ fdescribe('ContactsService', () => {
       const req = httpMock.expectOne(`http://localhost:3000/contacts`);
 
       expect(req.request.method).toBe('POST');
+
+      flush();
+    }));
+  });
+
+  describe( 'deleteContact', () => {
+
+    it('should call window confirm with specific string', () => {
+      spyOn(window, 'confirm');
+      service.deleteContact(mockContactData);
+
+      expect(window.confirm).toHaveBeenCalledWith(
+        `Вы действительно желаете удалить ${mockContactData.firstName} ${mockContactData.lastName} из свой телефонной книги?`
+      );
+    });
+
+    it('should make request on specific URL and use DELETE method', fakeAsync(() => {
+
+      spyOn(window, 'confirm').and.returnValue(true);
+      service.deleteContact(mockContactData);
+
+      const req = httpMock.expectOne(`http://localhost:3000/contacts/1`);
+
+      expect(req.request.method).toBe('DELETE');
 
       flush();
     }));
